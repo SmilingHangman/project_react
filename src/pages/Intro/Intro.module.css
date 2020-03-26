@@ -9,6 +9,7 @@
   align-items: center;
   justify-content: center;
   background-color: #000000;
+  padding: 0 4rem;
 }
 
 h1 {
@@ -19,23 +20,36 @@ h1 {
   color: #ffffff;
 }
 
-button {
+button,
+.link {
   padding: 10px 35px;
   border-radius: 10px;
   background-color: rgb(226, 167, 77);
   font-family: 'Indie Flower', cursive;
   font-size: 1.5rem;
+  color: #000000;
+  text-decoration: none;
+  border: none;
+  height: 55px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+}
+
+button:hover {
+  cursor: pointer;
 }
 
 p {
   color: #ffffff;
   font-size: 2rem;
   font-family: 'Kalam', cursive;
+  margin-bottom: 2rem;
 }
 
 input {
   font-family: 'Indie Flower', cursive;
   font-size: 1.5rem;
-  margin: 2rem 0;
+  margin-bottom: 2rem;
   padding: 0.2em 0.5em;
 }
