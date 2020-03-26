@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css?family=Kalam:400,700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Indie+Flower&display=swap');
+
+.mainscreen {
+  width: 100vw;
+  height: 700px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #000000;
+}
+
+h1 {
+  font-size: 3rem;
+  margin: 2rem 0;
+  font-family: 'Kalam', cursive;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+button {
+  padding: 10px 35px;
+  border-radius: 10px;
+  background-color: rgb(226, 167, 77);
+  font-family: 'Indie Flower', cursive;
+  font-size: 1.5rem;
+}
+
+p {
+  color: #ffffff;
+  font-size: 2rem;
+  font-family: 'Kalam', cursive;
+}
+
+input {
+  font-family: 'Indie Flower', cursive;
+  font-size: 1.5rem;
+  margin: 2rem 0;
+  padding: 0.2em 0.5em;
+}
