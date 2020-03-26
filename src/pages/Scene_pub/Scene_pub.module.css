@@ -1,0 +1,61 @@
+.playArea {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+}
+.pubspace {
+  height: 650px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #000000;
+  padding: 0 4rem;
+  background-image: url(../../assets/images/dustin-belt-DCQilQQ_p7A-unsplash.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+.drinkingdude {
+  bottom: 0;
+  right: 20px;
+  width: 300px;
+  height: 470px;
+  position: absolute;
+  /* background-color: rgba(0, 255, 255, 0.418); */
+}
+.drinkingdude:hover {
+  cursor: pointer;
+  border: 2px solid rgba(26, 128, 26, 0.829);
+}
+.drinkingduderesponse {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  min-height: 60px;
+  min-width: 200px;
+  background-color: #ffffff;
+  top: 140px;
+  right: 280px;
+  border-radius: 15px;
+  font-size: 2rem;
+  font-family: 'Kalam', cursive;
+  padding: 0 1rem;
+}
+
+.dialogueArea {
+  height: 140px;
+  background-color: #000000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+p {
+  color: #ffffff;
+  font-size: 2rem;
+  font-family: 'Kalam', cursive;
+  margin-bottom: 0;
+}

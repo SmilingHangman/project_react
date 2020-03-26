@@ -8,12 +8,21 @@ export const Intro = () => {
   const [start, setStart] = useState(false)
   const [characterName, setCharacterName] = useState('some random loser')
   const [continueToNext, setContinueToNext] = useState(false)
+  const [characterNameReminder, setCharacterNameReminder] = useState(false)
+  const [triggerOnce, setTriggerOnce] = useState(false)
 
-  const characterNameHandler = () =>
+  const characterNameHandler = () => {
     dispatch({
       type: 'CHARACTER_NAME',
       characterName
     })
+    if (characterName === 'some random loser' && triggerOnce === false) {
+      setCharacterNameReminder(!characterNameReminder)
+      setTriggerOnce(true)
+    } else {
+      setContinueToNext(true)
+    }
+  }
 
   return (
     <div className={classes.mainscreen}>
@@ -25,14 +34,22 @@ export const Intro = () => {
       )}
       {start && !continueToNext && (
         <>
-          <p>Please enter your character's name in the field below</p>
+          {!characterNameReminder && (
+            <p>Please enter your character's name in the field below</p>
+          )}
+          {characterNameReminder && (
+            <p>
+              Yo, come on, type in a name. You don't want to be some random
+              loser do you?
+            </p>
+          )}
           <input
             type='text'
             placeholder='Enter name here...'
             onInput={event => setCharacterName(event.target.value)}
           ></input>
-          <button onClick={(characterNameHandler, setContinueToNext)}>
-            Continue...
+          <button onClick={characterNameHandler}>
+            {!characterNameReminder ? 'Continue...' : "I don't care"}
           </button>
         </>
       )}
