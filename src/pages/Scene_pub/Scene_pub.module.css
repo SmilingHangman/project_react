@@ -10,16 +10,41 @@
   align-items: center;
   justify-content: center;
   background-color: #000000;
-  padding: 0 4rem;
+  /* padding: 0 4rem; */
   background-image: url(../../assets/images/dustin-belt-DCQilQQ_p7A-unsplash.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   position: relative;
 }
 
+.inebriationbox {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background-color: #000000;
+  color: #ffffff;
+  font-size: 2rem;
+  font-family: 'Kalam', cursive;
+  padding: 1rem;
+  border-radius: 15px;
+}
+.beerbottle {
+  width: 34px;
+  height: 140px;
+  position: absolute;
+  left: 316px;
+  bottom: 140px;
+  /* background-color: rgba(0, 255, 255, 0.418); */
+}
+.beerbottle:hover {
+  cursor: pointer;
+  border: 2px solid rgba(26, 128, 26, 0.829);
+}
+
 .drinkingdude {
   bottom: 0;
-  right: 20px;
+  left: 648px;
+  /* right: 20px; */
   width: 300px;
   height: 470px;
   position: absolute;
@@ -51,6 +76,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 0 2rem;
 }
 
 p {
