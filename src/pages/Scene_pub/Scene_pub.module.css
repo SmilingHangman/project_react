@@ -2,6 +2,36 @@
   width: 100vw;
   display: flex;
   flex-direction: column;
+  position: relative;
+}
+.resolvescreen {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: #000000;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 3rem;
+}
+.link {
+  padding: 10px 35px;
+  border-radius: 10px;
+  background-color: rgb(226, 167, 77);
+  font-family: 'Indie Flower', cursive;
+  font-size: 1.5rem;
+  color: #000000;
+  text-decoration: none;
+  border: none;
+  height: 55px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  margin-top: 2rem;
 }
 .pubspace {
   height: 650px;
