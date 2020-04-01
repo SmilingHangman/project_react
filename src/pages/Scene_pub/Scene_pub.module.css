@@ -40,7 +40,6 @@
   align-items: center;
   justify-content: center;
   background-color: #000000;
-  /* padding: 0 4rem; */
   background-image: url(../../assets/images/dustin-belt-DCQilQQ_p7A-unsplash.jpg);
   background-size: cover;
   background-repeat: no-repeat;
@@ -58,6 +57,66 @@
   padding: 1rem;
   border-radius: 15px;
 }
+.soundOn {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background-color: #000000;
+  padding: 1rem;
+  border-radius: 15px;
+  height: 32px;
+  width: 32px;
+  background-size: cover;
+  background-position-x: 3px;
+  background-image: url(../../assets/images/play_sound.svg);
+}
+.soundOff {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background-color: #000000;
+  padding: 1rem;
+  border-radius: 15px;
+  height: 32px;
+  width: 32px;
+  background-size: cover;
+  background-position-x: 3px;
+  background-image: url(../../assets/images/mute_sound.svg);
+}
+.soundOn:hover,
+.soundOff:hover {
+  cursor: pointer;
+}
+.alienhead {
+  width: 50px;
+  height: 54px;
+  position: absolute;
+  left: 302px;
+  top: 192px;
+}
+.alienhead:hover {
+  cursor: pointer;
+  /* border: 2px solid rgba(26, 128, 26, 0.829); */
+}
+.alienwisdom {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: #7e5b5b4b;
+  z-index: 3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  filter: blur(4);
+}
+.alienwisdom:hover {
+  cursor: pointer;
+}
+img {
+  width: 400px;
+}
 .beerbottle {
   width: 34px;
   height: 140px;
@@ -68,7 +127,7 @@
 }
 .beerbottle:hover {
   cursor: pointer;
-  border: 2px solid rgba(26, 128, 26, 0.829);
+  /* border: 2px solid rgba(26, 128, 26, 0.829); */
 }
 
 .drinkingdude {
@@ -82,7 +141,7 @@
 }
 .drinkingdude:hover {
   cursor: pointer;
-  border: 2px solid rgba(26, 128, 26, 0.829);
+  /* border: 2px solid rgba(26, 128, 26, 0.829); */
 }
 .drinkingduderesponse {
   display: flex;

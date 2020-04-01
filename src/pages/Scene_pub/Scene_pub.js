@@ -5,19 +5,37 @@ import { Link } from 'react-router-dom'
 
 import belchSound from '../../assets/sounds/belch.wav'
 import swallowSound from '../../assets/sounds/swallow.mp3'
+import woahSound from '../../assets/sounds/woah.wav'
 import pubAmbience from '../../assets/sounds/pub_ambience.mp3'
+import dunDunDun from '../../assets/sounds/dun_dun_dun.wav'
+
+const belch = new Audio(belchSound)
+const swallow = new Audio(swallowSound)
+const woah = new Audio(woahSound)
+const ambience = new Audio(pubAmbience)
+const dunDun = new Audio(dunDunDun)
 
 export const Scene_pub = () => {
   const dispatch = useDispatch()
   const characterName = useSelector(state => state.characterName)
   const inebriationLevelState = useSelector(state => state.inebriationLevel)
+
   const [resolveScreen, setResolveScreen] = useState(false)
   const [resolveScreenToggle, setResolveScreenToggle] = useState(false)
   const [resolveNext, setResolveNext] = useState(false)
   const [inebriationLevel, setinebriationLevel] = useState(0)
+
+  const [playAmbience, setPlayAmbience] = useState(true)
+
+  const [alienWisdom, setAlienWisdom] = useState(false)
+  const [inspiroPicture, setInspiroPicture] = useState('')
   const [dudeReplyToggler, setdudeReplyToggler] = useState(false)
   const [dudeReplyText, setDudeReplyText] = useState('')
   const [befriendDude, setBefriendDude] = useState(false)
+  const [resetTimeout, setResetTimeout] = useState(null)
+  const [hoverOnAlienObservation, setHoverOnAlienObservation] = useState(
+    'This alien head has surprisingly deep eyes...'
+  )
   const [hoverOnBeerObservation, setHoverOnBeerObservation] = useState(
     'Somebody left this beer unattended? And the bottle is almost full too...'
   )
@@ -25,62 +43,78 @@ export const Scene_pub = () => {
     'This guy seems to be really into his beer.'
   )
   const [
+    alienHeadInteractionsCounter,
+    setAlienHeadInteractionsCounter
+  ] = useState(0)
+  const [
     beerBottleInteractionsCounter,
     setBeerBottleInteractionsCounter
   ] = useState(0)
   const [dudesPatienceCounter, setDudesPatienceCounter] = useState(0)
   const [beerBottleEmpty, setBeerBottleEmpty] = useState(false)
+  const [mouseHoverOnElementAlien, setMouseHoverOnElementAlien] = useState(
+    false
+  )
   const [mouseHoverOnElementDude, setMouseHoverOnElementDude] = useState(false)
   const [mouseHoverOnElementBeer, setMouseHoverOnElementBeer] = useState(false)
-  const belch = new Audio(belchSound)
-  const swallow = new Audio(swallowSound)
-  const ambience = new Audio(pubAmbience)
-  // TODO: figure out how to stop ambience loop on rout change
-  // TODO: remove ambience from starting when clicking on beer bottle [testing reasons] and create a special button for toggling it ON/OFF
-  // MEMO: code below works, ambience looping ok.
-  // ambience.addEventListener('timeupdate', () => {
-  //   if (ambience.currentTime > ambience.duration - 2) {
-  //     ambience.currentTime = 0.1
-  //     ambience.play()
-  //   }
-  // })
 
-  // useEffect(() => {
-  //   setTimeout(() => {
-  //     setResolveScreen(true)
-  //   }, 1700)
-  // }, [resolveScreenToggle])
+  // TODO: reset global states on game over??
 
   useEffect(() => {
-    setTimeout(() => {
+    playAmbience ? ambience.play() : ambience.pause()
+    resolveScreen && setPlayAmbience(false)
+  }, [playAmbience, resolveScreen])
+
+  ambience.addEventListener('timeupdate', () => {
+    if (ambience.currentTime > ambience.duration - 2) {
+      ambience.currentTime = 0.1
+      ambience.play()
+    }
+  })
+
+  useEffect(() => {
+    resolveScreen && dunDun.play()
+  }, [resolveScreen])
+
+  useEffect(() => {
+    if (resetTimeout) {
+      clearTimeout(resetTimeout)
+    }
+    const timeout = setTimeout(() => {
       setdudeReplyToggler(false)
-    }, 1800)
+      setResetTimeout(null)
+    }, 1900)
+    setResetTimeout(timeout)
+  }, [dudesPatienceCounter])
+
+  useEffect(() => {
     if (beerBottleEmpty) {
       setTimeout(() => {
         setHoverOnBeerObservation("Sigh, it's all empty now. You drank it.")
       }, 1700)
     }
+  }, [beerBottleEmpty])
+
+  useEffect(() => {
+    if (befriendDude) {
+      setTimeout(() => {
+        setHoverOnDudeObservation("He's your pal now. At least for tonight.")
+      }, 1700)
+    }
+  }, [befriendDude])
+
+  useEffect(() => {
     if (resolveScreenToggle) {
       setTimeout(() => {
         setResolveScreen(true)
         setResolveScreenToggle(false)
       }, 1700)
     }
-    if (befriendDude) {
-      setTimeout(() => {
-        setHoverOnDudeObservation("He's your pal now. At least for tonight.")
-      }, 1700)
-    }
-  }, [dudesPatienceCounter, beerBottleEmpty, resolveScreenToggle, befriendDude])
+  }, [resolveScreenToggle])
 
-  // useEffect(() => {
-  //   if (beerBottleEmpty) {
-  //     setTimeout(() => {
-  //       setHoverOnBeerObservation("Sigh, it's all empty now. You drank it.")
-  //     }, 1700)
-  //   }
-  // }, [beerBottleEmpty])
-
+  const toggleHoverOnAlien = () => {
+    setMouseHoverOnElementAlien(!mouseHoverOnElementAlien)
+  }
   const toggleHoverOnDude = () => {
     setMouseHoverOnElementDude(!mouseHoverOnElementDude)
   }
@@ -90,6 +124,46 @@ export const Scene_pub = () => {
 
   const resolveScreenHandler = () => {
     setResolveScreen(!resolveScreen)
+    befriendDude && resolveNext && togglePlayAmbienceHandler()
+  }
+
+  const togglePlayAmbienceHandler = () => {
+    setPlayAmbience(!playAmbience)
+  }
+
+  const alienWisdomHandler = async () => {
+    const response = await fetch('https://inspirobot.me/api?generate=true')
+    const fetchedPicture = await response.text()
+    setInspiroPicture(fetchedPicture)
+    setAlienWisdom(!alienWisdom)
+  }
+
+  const pokeAlienHandler = () => {
+    setAlienHeadInteractionsCounter(alienHeadInteractionsCounter + 1)
+    switch (alienHeadInteractionsCounter + 1) {
+      case 1:
+        setHoverOnAlienObservation(
+          'You keep your gaze fixed on those alien eyes and your head starts spinning...'
+        )
+        break
+      case 2:
+        setHoverOnAlienObservation(
+          'Woah! Suddenly you feel like you gained some deep alien insight into human nature. Stare again?'
+        )
+        alienWisdomHandler()
+        woah.play()
+        break
+      case 3:
+        setHoverOnAlienObservation(
+          'You have absorbed some more weird alien wisdom. Stare again?'
+        )
+        alienWisdomHandler()
+        woah.play()
+        setAlienHeadInteractionsCounter(2)
+        break
+      default:
+        break
+    }
   }
 
   const pokeDudeHandler = () => {
@@ -145,6 +219,7 @@ export const Scene_pub = () => {
         setdudeReplyToggler(true)
         setDudeReplyText('I... I love you... You know?')
         belch.play()
+        setDudesPatienceCounter(5)
         break
       default:
         break
@@ -163,7 +238,6 @@ export const Scene_pub = () => {
         setBeerBottleEmpty(true)
         setHoverOnBeerObservation('While nobody sees it... Bottoms up!')
         swallow.play()
-        // ambience.play()
         break
       case 2:
         setHoverOnBeerObservation("Sigh, it's all empty now. You drank it.")
@@ -223,6 +297,21 @@ export const Scene_pub = () => {
           Inebriation Level: {inebriationLevelState.inebriationLevel}
         </div>
         <div
+          onClick={togglePlayAmbienceHandler}
+          className={playAmbience ? classes.soundOn : classes.soundOff}
+        ></div>
+        {alienWisdom && (
+          <div className={classes.alienwisdom} onClick={alienWisdomHandler}>
+            <img src={inspiroPicture} alt='' />
+          </div>
+        )}
+        <div
+          className={classes.alienhead}
+          onClick={pokeAlienHandler}
+          onMouseEnter={toggleHoverOnAlien}
+          onMouseLeave={toggleHoverOnAlien}
+        ></div>
+        <div
           className={classes.beerbottle}
           onMouseEnter={toggleHoverOnBeer}
           onMouseLeave={toggleHoverOnBeer}
@@ -241,6 +330,7 @@ export const Scene_pub = () => {
       <div className={classes.dialogueArea}>
         {mouseHoverOnElementDude && <p>{hoverOnDudeObservation}</p>}
         {mouseHoverOnElementBeer && <p>{hoverOnBeerObservation}</p>}
+        {mouseHoverOnElementAlien && <p>{hoverOnAlienObservation}</p>}
       </div>
     </div>
   )

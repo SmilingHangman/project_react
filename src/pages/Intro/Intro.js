@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import classes from './Intro.module.css'
-import { useDispatch, useSelector } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import { Link } from 'react-router-dom'
 //add 'useHistory' in Link import
 
@@ -8,14 +8,12 @@ export const Intro = () => {
   const dispatch = useDispatch()
   // const history = useHistory()
   // history.push
-  const inebriationLevel = useSelector(state => state.inebriationLevel)
+  // const inebriationLevel = useSelector(state => state.inebriationLevel)
   const [start, setStart] = useState(false)
   const [characterName, setCharacterName] = useState('some random loser')
   const [continueToNext, setContinueToNext] = useState(false)
   const [characterNameReminder, setCharacterNameReminder] = useState(false)
   const [triggerOnce, setTriggerOnce] = useState(false)
-
-  console.log(inebriationLevel)
 
   const characterNameHandler = () => {
     dispatch({
