@@ -1,29 +1,29 @@
 {
   "files": {
-    "main.css": "/SmilingHangman/project_react/static/css/main.35365d71.chunk.css",
-    "main.js": "/SmilingHangman/project_react/static/js/main.e67e3083.chunk.js",
-    "main.js.map": "/SmilingHangman/project_react/static/js/main.e67e3083.chunk.js.map",
-    "runtime-main.js": "/SmilingHangman/project_react/static/js/runtime-main.e2c1a2cc.js",
-    "runtime-main.js.map": "/SmilingHangman/project_react/static/js/runtime-main.e2c1a2cc.js.map",
-    "static/js/2.fc890b90.chunk.js": "/SmilingHangman/project_react/static/js/2.fc890b90.chunk.js",
-    "static/js/2.fc890b90.chunk.js.map": "/SmilingHangman/project_react/static/js/2.fc890b90.chunk.js.map",
-    "index.html": "/SmilingHangman/project_react/index.html",
-    "precache-manifest.7b331fb8d5fe696197c4608869517525.js": "/SmilingHangman/project_react/precache-manifest.7b331fb8d5fe696197c4608869517525.js",
-    "service-worker.js": "/SmilingHangman/project_react/service-worker.js",
-    "static/css/main.35365d71.chunk.css.map": "/SmilingHangman/project_react/static/css/main.35365d71.chunk.css.map",
-    "static/js/2.fc890b90.chunk.js.LICENSE.txt": "/SmilingHangman/project_react/static/js/2.fc890b90.chunk.js.LICENSE.txt",
-    "static/media/App.css": "/SmilingHangman/project_react/static/media/beer-20s-1084px.d14b8d58.svg",
-    "static/media/belch.wav": "/SmilingHangman/project_react/static/media/belch.08488751.wav",
-    "static/media/dun_dun_dun.wav": "/SmilingHangman/project_react/static/media/dun_dun_dun.92c3bace.wav",
-    "static/media/Scene_pub.module.css": "/SmilingHangman/project_react/static/media/play_sound.eabd1212.svg",
-    "static/media/pub_ambience.mp3": "/SmilingHangman/project_react/static/media/pub_ambience.76d325c0.mp3",
-    "static/media/swallow.mp3": "/SmilingHangman/project_react/static/media/swallow.6c0edf12.mp3",
-    "static/media/woah.wav": "/SmilingHangman/project_react/static/media/woah.09fb21c5.wav"
+    "main.css": "/SmilingHangman/react_project_build_test/static/css/main.75908d96.chunk.css",
+    "main.js": "/SmilingHangman/react_project_build_test/static/js/main.63b4037c.chunk.js",
+    "main.js.map": "/SmilingHangman/react_project_build_test/static/js/main.63b4037c.chunk.js.map",
+    "runtime-main.js": "/SmilingHangman/react_project_build_test/static/js/runtime-main.d115d190.js",
+    "runtime-main.js.map": "/SmilingHangman/react_project_build_test/static/js/runtime-main.d115d190.js.map",
+    "static/js/2.fc890b90.chunk.js": "/SmilingHangman/react_project_build_test/static/js/2.fc890b90.chunk.js",
+    "static/js/2.fc890b90.chunk.js.map": "/SmilingHangman/react_project_build_test/static/js/2.fc890b90.chunk.js.map",
+    "index.html": "/SmilingHangman/react_project_build_test/index.html",
+    "precache-manifest.9a0ca8a67548cc34ecba6f4c9e78b693.js": "/SmilingHangman/react_project_build_test/precache-manifest.9a0ca8a67548cc34ecba6f4c9e78b693.js",
+    "service-worker.js": "/SmilingHangman/react_project_build_test/service-worker.js",
+    "static/css/main.75908d96.chunk.css.map": "/SmilingHangman/react_project_build_test/static/css/main.75908d96.chunk.css.map",
+    "static/js/2.fc890b90.chunk.js.LICENSE.txt": "/SmilingHangman/react_project_build_test/static/js/2.fc890b90.chunk.js.LICENSE.txt",
+    "static/media/App.css": "/SmilingHangman/react_project_build_test/static/media/beer-20s-1084px.d14b8d58.svg",
+    "static/media/belch.wav": "/SmilingHangman/react_project_build_test/static/media/belch.08488751.wav",
+    "static/media/dun_dun_dun.wav": "/SmilingHangman/react_project_build_test/static/media/dun_dun_dun.92c3bace.wav",
+    "static/media/Scene_pub.module.css": "/SmilingHangman/react_project_build_test/static/media/play_sound.eabd1212.svg",
+    "static/media/pub_ambience.mp3": "/SmilingHangman/react_project_build_test/static/media/pub_ambience.76d325c0.mp3",
+    "static/media/swallow.mp3": "/SmilingHangman/react_project_build_test/static/media/swallow.6c0edf12.mp3",
+    "static/media/woah.wav": "/SmilingHangman/react_project_build_test/static/media/woah.09fb21c5.wav"
   },
   "entrypoints": [
-    "static/js/runtime-main.e2c1a2cc.js",
+    "static/js/runtime-main.d115d190.js",
     "static/js/2.fc890b90.chunk.js",
-    "static/css/main.35365d71.chunk.css",
-    "static/js/main.e67e3083.chunk.js"
+    "static/css/main.75908d96.chunk.css",
+    "static/js/main.63b4037c.chunk.js"
   ]
 }
