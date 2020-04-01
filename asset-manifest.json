@@ -1,0 +1,29 @@
+{
+  "files": {
+    "main.css": "/react_project_build_test/index.html/static/css/main.4dd99aff.chunk.css",
+    "main.js": "/react_project_build_test/index.html/static/js/main.57adab70.chunk.js",
+    "main.js.map": "/react_project_build_test/index.html/static/js/main.57adab70.chunk.js.map",
+    "runtime-main.js": "/react_project_build_test/index.html/static/js/runtime-main.652fa68d.js",
+    "runtime-main.js.map": "/react_project_build_test/index.html/static/js/runtime-main.652fa68d.js.map",
+    "static/js/2.fc890b90.chunk.js": "/react_project_build_test/index.html/static/js/2.fc890b90.chunk.js",
+    "static/js/2.fc890b90.chunk.js.map": "/react_project_build_test/index.html/static/js/2.fc890b90.chunk.js.map",
+    "index.html": "/react_project_build_test/index.html/index.html",
+    "precache-manifest.317c027a1e5fd2e283b7e470225d788d.js": "/react_project_build_test/index.html/precache-manifest.317c027a1e5fd2e283b7e470225d788d.js",
+    "service-worker.js": "/react_project_build_test/index.html/service-worker.js",
+    "static/css/main.4dd99aff.chunk.css.map": "/react_project_build_test/index.html/static/css/main.4dd99aff.chunk.css.map",
+    "static/js/2.fc890b90.chunk.js.LICENSE.txt": "/react_project_build_test/index.html/static/js/2.fc890b90.chunk.js.LICENSE.txt",
+    "static/media/App.css": "/react_project_build_test/index.html/static/media/beer-20s-1084px.d14b8d58.svg",
+    "static/media/belch.wav": "/react_project_build_test/index.html/static/media/belch.08488751.wav",
+    "static/media/dun_dun_dun.wav": "/react_project_build_test/index.html/static/media/dun_dun_dun.92c3bace.wav",
+    "static/media/Scene_pub.module.css": "/react_project_build_test/index.html/static/media/play_sound.eabd1212.svg",
+    "static/media/pub_ambience.mp3": "/react_project_build_test/index.html/static/media/pub_ambience.76d325c0.mp3",
+    "static/media/swallow.mp3": "/react_project_build_test/index.html/static/media/swallow.6c0edf12.mp3",
+    "static/media/woah.wav": "/react_project_build_test/index.html/static/media/woah.09fb21c5.wav"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.652fa68d.js",
+    "static/js/2.fc890b90.chunk.js",
+    "static/css/main.4dd99aff.chunk.css",
+    "static/js/main.57adab70.chunk.js"
+  ]
+}
