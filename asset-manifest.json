@@ -1,29 +1,29 @@
 {
   "files": {
-    "main.css": "/project_react/static/css/main.c5d6eba8.chunk.css",
-    "main.js": "/project_react/static/js/main.76381bb2.chunk.js",
-    "main.js.map": "/project_react/static/js/main.76381bb2.chunk.js.map",
-    "runtime-main.js": "/project_react/static/js/runtime-main.f8916558.js",
-    "runtime-main.js.map": "/project_react/static/js/runtime-main.f8916558.js.map",
-    "static/js/2.fc890b90.chunk.js": "/project_react/static/js/2.fc890b90.chunk.js",
-    "static/js/2.fc890b90.chunk.js.map": "/project_react/static/js/2.fc890b90.chunk.js.map",
-    "index.html": "/project_react/index.html",
-    "precache-manifest.c9e92eb57da1fb8d765b51003afb6745.js": "/project_react/precache-manifest.c9e92eb57da1fb8d765b51003afb6745.js",
-    "service-worker.js": "/project_react/service-worker.js",
-    "static/css/main.c5d6eba8.chunk.css.map": "/project_react/static/css/main.c5d6eba8.chunk.css.map",
-    "static/js/2.fc890b90.chunk.js.LICENSE.txt": "/project_react/static/js/2.fc890b90.chunk.js.LICENSE.txt",
-    "static/media/App.css": "/project_react/static/media/beer-20s-1084px.d14b8d58.svg",
-    "static/media/belch.wav": "/project_react/static/media/belch.08488751.wav",
-    "static/media/dun_dun_dun.wav": "/project_react/static/media/dun_dun_dun.92c3bace.wav",
-    "static/media/Scene_pub.module.css": "/project_react/static/media/play_sound.eabd1212.svg",
-    "static/media/pub_ambience.mp3": "/project_react/static/media/pub_ambience.76d325c0.mp3",
-    "static/media/swallow.mp3": "/project_react/static/media/swallow.6c0edf12.mp3",
-    "static/media/woah.wav": "/project_react/static/media/woah.09fb21c5.wav"
+    "main.css": "./static/css/main.1c8f40c4.chunk.css",
+    "main.js": "./static/js/main.57022a10.chunk.js",
+    "main.js.map": "./static/js/main.57022a10.chunk.js.map",
+    "runtime-main.js": "./static/js/runtime-main.4f45ff50.js",
+    "runtime-main.js.map": "./static/js/runtime-main.4f45ff50.js.map",
+    "static/js/2.fc890b90.chunk.js": "./static/js/2.fc890b90.chunk.js",
+    "static/js/2.fc890b90.chunk.js.map": "./static/js/2.fc890b90.chunk.js.map",
+    "index.html": "./index.html",
+    "precache-manifest.cddfc7be7f1815fac59ef73d34ca1f73.js": "./precache-manifest.cddfc7be7f1815fac59ef73d34ca1f73.js",
+    "service-worker.js": "./service-worker.js",
+    "static/css/main.1c8f40c4.chunk.css.map": "./static/css/main.1c8f40c4.chunk.css.map",
+    "static/js/2.fc890b90.chunk.js.LICENSE.txt": "./static/js/2.fc890b90.chunk.js.LICENSE.txt",
+    "static/media/App.css": "./static/media/beer-20s-1084px.d14b8d58.svg",
+    "static/media/belch.wav": "./static/media/belch.08488751.wav",
+    "static/media/dun_dun_dun.wav": "./static/media/dun_dun_dun.92c3bace.wav",
+    "static/media/Scene_pub.module.css": "./static/media/play_sound.eabd1212.svg",
+    "static/media/pub_ambience.mp3": "./static/media/pub_ambience.76d325c0.mp3",
+    "static/media/swallow.mp3": "./static/media/swallow.6c0edf12.mp3",
+    "static/media/woah.wav": "./static/media/woah.09fb21c5.wav"
   },
   "entrypoints": [
-    "static/js/runtime-main.f8916558.js",
+    "static/js/runtime-main.4f45ff50.js",
     "static/js/2.fc890b90.chunk.js",
-    "static/css/main.c5d6eba8.chunk.css",
-    "static/js/main.76381bb2.chunk.js"
+    "static/css/main.1c8f40c4.chunk.css",
+    "static/js/main.57022a10.chunk.js"
   ]
 }
