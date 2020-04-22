@@ -6,7 +6,7 @@ import { routes } from './routes'
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename='/project_react'>
       <Container>
         <Switch>
           {routes.map((route, index) => (

@@ -17,11 +17,12 @@ const dunDun = new Audio(dunDunDun)
 
 export const Scene_pub = () => {
   const dispatch = useDispatch()
-  const characterName = useSelector(state => state.characterName)
-  const inebriationLevelState = useSelector(state => state.inebriationLevel)
+  const characterName = useSelector((state) => state.characterName)
+  const inebriationLevelState = useSelector((state) => state.inebriationLevel)
 
   const [resolveScreen, setResolveScreen] = useState(false)
   const [resolveScreenToggle, setResolveScreenToggle] = useState(false)
+  const [overclickingPreventer, setOverclickingPreventer] = useState(false)
   const [resolveNext, setResolveNext] = useState(false)
   const [inebriationLevel, setinebriationLevel] = useState(0)
 
@@ -44,11 +45,11 @@ export const Scene_pub = () => {
   )
   const [
     alienHeadInteractionsCounter,
-    setAlienHeadInteractionsCounter
+    setAlienHeadInteractionsCounter,
   ] = useState(0)
   const [
     beerBottleInteractionsCounter,
-    setBeerBottleInteractionsCounter
+    setBeerBottleInteractionsCounter,
   ] = useState(0)
   const [dudesPatienceCounter, setDudesPatienceCounter] = useState(0)
   const [beerBottleEmpty, setBeerBottleEmpty] = useState(false)
@@ -105,12 +106,13 @@ export const Scene_pub = () => {
 
   useEffect(() => {
     if (resolveScreenToggle) {
+      setOverclickingPreventer(true)
       setTimeout(() => {
         setResolveScreen(true)
         setResolveScreenToggle(false)
       }, 1700)
     }
-  }, [resolveScreenToggle])
+  }, [resolveScreenToggle, overclickingPreventer])
 
   const toggleHoverOnAlien = () => {
     setMouseHoverOnElementAlien(!mouseHoverOnElementAlien)
@@ -124,6 +126,7 @@ export const Scene_pub = () => {
 
   const resolveScreenHandler = () => {
     setResolveScreen(!resolveScreen)
+    setOverclickingPreventer(!overclickingPreventer)
     befriendDude && resolveNext && togglePlayAmbienceHandler()
   }
 
@@ -205,7 +208,7 @@ export const Scene_pub = () => {
         setDudeReplyText('Have one on me buddy! Sorry about earlier...')
         dispatch({
           type: 'INEBRIATION_LEVEL',
-          inebriationLevel
+          inebriationLevel,
         })
         setinebriationLevel(+1)
         swallow.play()
@@ -232,7 +235,7 @@ export const Scene_pub = () => {
       case 1:
         dispatch({
           type: 'INEBRIATION_LEVEL',
-          inebriationLevel
+          inebriationLevel,
         })
         setinebriationLevel(+1)
         setBeerBottleEmpty(true)
@@ -326,11 +329,18 @@ export const Scene_pub = () => {
         {dudeReplyToggler && (
           <div className={classes.drinkingduderesponse}>{dudeReplyText}</div>
         )}
+        {overclickingPreventer && (
+          <div className={classes.overclickshieldscreen}></div>
+        )}
       </div>
       <div className={classes.dialogueArea}>
-        {mouseHoverOnElementDude && <p>{hoverOnDudeObservation}</p>}
+        {(overclickingPreventer || mouseHoverOnElementDude) && (
+          <p>{hoverOnDudeObservation}</p>
+        )}
         {mouseHoverOnElementBeer && <p>{hoverOnBeerObservation}</p>}
-        {mouseHoverOnElementAlien && <p>{hoverOnAlienObservation}</p>}
+        {(alienWisdom || mouseHoverOnElementAlien) && (
+          <p>{hoverOnAlienObservation}</p>
+        )}
       </div>
     </div>
   )
