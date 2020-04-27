@@ -19,6 +19,9 @@ export const Scene_pub = () => {
   const dispatch = useDispatch()
   const characterName = useSelector((state) => state.characterName)
   const inebriationLevelState = useSelector((state) => state.inebriationLevel)
+  const ambienceState = useSelector((state) => state.toggleAmbience)
+
+  console.log(ambienceState.playAmbience)
 
   const [resolveScreen, setResolveScreen] = useState(false)
   const [resolveScreenToggle, setResolveScreenToggle] = useState(false)
@@ -127,11 +130,15 @@ export const Scene_pub = () => {
   const resolveScreenHandler = () => {
     setResolveScreen(!resolveScreen)
     setOverclickingPreventer(!overclickingPreventer)
-    befriendDude && resolveNext && togglePlayAmbienceHandler()
+    ambienceState.playAmbience && setPlayAmbience(true)
   }
 
   const togglePlayAmbienceHandler = () => {
     setPlayAmbience(!playAmbience)
+    dispatch({
+      type: 'MUTE_AMBIENCE',
+      payload: !playAmbience,
+    })
   }
 
   const alienWisdomHandler = async () => {

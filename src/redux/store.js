@@ -1,10 +1,12 @@
 import { createStore, combineReducers } from 'redux'
 import characterReducer from './reducer-character'
 import inebriationLevelReducer from './reducer-inebriation'
+import toggleAmbienceReducer from './reducer-ambience'
 
 const rootReducer = combineReducers({
   characterName: characterReducer,
-  inebriationLevel: inebriationLevelReducer
+  inebriationLevel: inebriationLevelReducer,
+  toggleAmbience: toggleAmbienceReducer,
 })
 
 const store = createStore(
